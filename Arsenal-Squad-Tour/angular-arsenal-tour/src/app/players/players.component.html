@@ -1,0 +1,8 @@
+<h2>{{ player.firstName + " " + player.lastName | uppercase }} Details</h2>
+<div><span>id: </span>{{player.nb}}</div>
+<div>
+    <label>Name:
+      <input [(ngModel)]="player.firstName" placeholder="firstName">
+      <input [(ngModel)]="player.lastName" placeholder="lastName">
+    </label>
+</div>
