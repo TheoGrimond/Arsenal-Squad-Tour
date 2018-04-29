@@ -1,8 +1,19 @@
-<h2>{{ player.firstName + " " + player.lastName | uppercase }} Details</h2>
-<div><span>id: </span>{{player.nb}}</div>
-<div>
-    <label>Name:
-      <input [(ngModel)]="player.firstName" placeholder="firstName">
-      <input [(ngModel)]="player.lastName" placeholder="lastName">
+<h2>Arsenal Players</h2>
+<ul class="players">
+  <li *ngFor="let player of players" 
+      [class.selected]="player === selectedPlayer"
+      (click)="onSelect(player)">
+    <span class="badge">{{player.nb}}</span> {{player.firstName}} {{player.lastName}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPlayer">
+    <h2>{{ selectedPlayer.firstName +" "+ selectedPlayer.lastName | uppercase }} Details</h2>
+  <div><span>number: </span>{{selectedPlayer.nb}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedPlayer.firstName" placeholder="firstName">
+      <input [(ngModel)]="selectedPlayer.lastName" placeholder="lastName">
     </label>
+  </div>
 </div>
