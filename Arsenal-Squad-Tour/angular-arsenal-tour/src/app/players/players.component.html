@@ -7,13 +7,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedPlayer">
-    <h2>{{ selectedPlayer.firstName +" "+ selectedPlayer.lastName | uppercase }} Details</h2>
-  <div><span>number: </span>{{selectedPlayer.nb}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedPlayer.firstName" placeholder="firstName">
-      <input [(ngModel)]="selectedPlayer.lastName" placeholder="lastName">
-    </label>
-  </div>
-</div>
+<app-player-detail [player]="selectedPlayer"></app-player-detail>
