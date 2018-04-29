@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Player } from '../player';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-player-detail',
@@ -8,12 +11,25 @@ import { Player } from '../player';
   styleUrls: ['./player-detail.component.css']
 })
 export class PlayerDetailComponent implements OnInit {
-  
+
   @Input() player: Player;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private playerService: PlayerService,
+    private location: Location
+  ) { }
 
   ngOnInit() {
+    this.getPlayer();
   }
 
+  getPlayer(): void {
+    const nb = +this.route.snapshot.paramMap.get('nb');
+    this.playerService.getPlayer(nb).subscribe(player => this.player = player)
+  }
+
+  goBack(): void{
+    this.location.back();
+  }
 }

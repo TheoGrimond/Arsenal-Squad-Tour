@@ -1,10 +1,8 @@
 <h2>Arsenal Players</h2>
 <ul class="players">
-  <li *ngFor="let player of players" 
-      [class.selected]="player === selectedPlayer"
-      (click)="onSelect(player)">
-    <span class="badge">{{player.nb}}</span> {{player.firstName}} {{player.lastName}}
+  <li *ngFor="let player of players" >
+    <a routerLink="/detail/{{player.nb}}">
+      <span class="badge">{{player.nb}}</span> {{player.firstName}} {{player.lastName}}
+    </a>
   </li>
 </ul>
-
-<app-player-detail [player]="selectedPlayer"></app-player-detail>

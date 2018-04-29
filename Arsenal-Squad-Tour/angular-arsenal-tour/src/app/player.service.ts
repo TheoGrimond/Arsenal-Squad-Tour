@@ -4,7 +4,7 @@ import { of } from 'rxjs/observable/of';
 
 import { Player } from './player';
 import { PLAYERS } from './mock-players';
-import { MessageService, MessageService } from './message.service';
+import { MessageService } from './message.service';
 
 @Injectable()
 export class PlayerService {
@@ -14,6 +14,10 @@ export class PlayerService {
     return of(PLAYERS);
   }
 
+  getPlayer(nb: number): Observable<Player> {
+    this.messageService.add(`PlayerService has fetched Player nb=${nb}`);
+    return of(PLAYERS.find(player => player.nb === nb));
+  }
 
   constructor(private messageService: MessageService) { }
 
