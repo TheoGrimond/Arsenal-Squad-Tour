@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { Player } from '../player';
 import { PlayerService } from '../player.service';
+import { PlayerRadarComponent } from '../player-radar/player-radar.component';
 
 @Component({
   selector: 'app-player-detail',
@@ -19,7 +20,7 @@ export class PlayerDetailComponent implements OnInit {
     private playerService: PlayerService,
     private location: Location
   ) { }
-
+  
   ngOnInit() {
     this.getPlayer();
   }

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../player';
 import { PlayerService } from '../player.service';
-import { PlayersTableComponent } from '../players-table/players-table.component';
 
 @Component({
-  selector: 'app-players',
-  templateUrl: './players.component.html',
-  styleUrls: ['./players.component.css']
+  selector: 'app-players-table',
+  templateUrl: './players-table.component.html',
+  styleUrls: ['./players-table.component.css']
 })
-export class PlayersComponent implements OnInit {
+export class PlayersTableComponent implements OnInit {
   players: Player[];
+  displayedColumns = ['id', 'firstName', 'lastName'];
 
   constructor(private playerService: PlayerService) { }
 
@@ -20,5 +20,4 @@ export class PlayersComponent implements OnInit {
   ngOnInit() {
     this.getPlayers();
   }
-
 }
