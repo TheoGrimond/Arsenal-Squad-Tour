@@ -14,7 +14,7 @@ export class PlayersTableComponent implements OnInit {
   constructor(private playerService: PlayerService) { }
 
   getPlayers(): void {
-    this.playerService.getPlayers().subscribe(players => this.players = players);
+    this.playerService.getPlayersJSON().subscribe(players => {this.players = players;});
   }
 
   ngOnInit() {

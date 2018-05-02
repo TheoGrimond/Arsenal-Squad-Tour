@@ -29,8 +29,21 @@ export class PlayerStatsListComponent implements OnInit {
   }
 
   getPlayer(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.playerService.getPlayer(id)
-      .subscribe(player => this.player = player);
-  }
+    const nb = +this.route.snapshot.paramMap.get('id');
+    this.playerService.getPlayersJSON().subscribe(playerData => {
+      for(let data of playerData) {
+        if(data.id === nb) {
+          this.player = data;
+          this.player.id = data.id;
+          this.player.firstName = data.firstName;
+          this.player.lastName = data.lastName;
+          this.player.shooting_accuracy = data.shooting_accuracy;
+          this.player.passing_accuracy = data.passing_accuracy;
+          this.player.dribbling_accuracy = data.dribbling_accuracy;
+          this.player.tackling_accuracy = data.tackling_accuracy;
+          this.player.scoring_ratio = data.scoring_ratio;
+          this.player.discipline = data.discipline;
+        }
+      }
+    });
 }

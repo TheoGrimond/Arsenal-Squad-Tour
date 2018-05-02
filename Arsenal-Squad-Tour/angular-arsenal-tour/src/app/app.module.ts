@@ -45,7 +45,7 @@ import { PlayerStatsListComponent } from './player-stats-list/player-stats-list.
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     MatTableModule,
     CdkTableModule,
     MatSortModule,

@@ -3,14 +3,20 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Response } from '@angular/http';
 
 import { Player } from './player';
 import { MessageService } from './message.service';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class PlayerService {
 
   private playersUrl = 'api/players';
+  result: Object;
 
   constructor(
     private http: HttpClient,
@@ -35,6 +41,24 @@ export class PlayerService {
       tap(_ => this.log(`fetched player id=${id}`)),
       catchError(this.handleError<Player>(`FAILED getPlayer id=${id}`))
     );
+  }
+
+  // /** GET JSON player by id. Will 404 if id not found */
+  // getJSON(id: number): Observable<Player> {
+  //   const url = "/assets/data/playersJSON.json";
+  //   return this.http.get<Player[]>(url).map(res => res);
+  //   return this.http.get(url).map((response: Response) => response.json())
+  //   .do(data => console.log("User data" + JSON.stringify(data)))
+  //   .catch(this.handleErrorJSON);
+  // }
+
+  getPlayersJSON(): Observable<Player[]> {
+    const url = "/assets/data/playersJSON.json";
+    console.log(this.http.get<Player[]>(url));
+    return this.http.get<Player[]>(url);
+    // return this.http.get(url).map((response: Response) => <Player[]>response.json())
+    // .do(data => console.log("User data" + JSON.stringify(data)))
+    // .catch(this.handleErrorJSON);
   }
 
   searchPlayers(term: string): Observable<Player[]> {
@@ -65,6 +89,11 @@ private handleError<T> (operation = 'operation', result?: T) {
     // Let the app keep running by returning an empty result.
     return of(result as T);
   };
+}
+
+private handleErrorJSON(error: Response) {
+  console.log(error);
+  return Observable.throw(error.json().error || 'Internal Server error');
 }
 
 

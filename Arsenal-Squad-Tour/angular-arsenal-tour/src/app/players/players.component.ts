@@ -14,11 +14,10 @@ export class PlayersComponent implements OnInit {
   constructor(private playerService: PlayerService) { }
 
   getPlayers(): void {
-    this.playerService.getPlayers().subscribe(players => this.players = players);
+    this.playerService.getPlayersJSON().subscribe(players => {this.players = players; console.log(this.players)});
   }
 
   ngOnInit() {
     this.getPlayers();
   }
-
 }

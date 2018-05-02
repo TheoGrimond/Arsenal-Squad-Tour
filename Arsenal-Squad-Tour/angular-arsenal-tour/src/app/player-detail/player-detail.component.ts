@@ -15,6 +15,17 @@ export class PlayerDetailComponent implements OnInit {
 
   @Input() player: Player;
 
+  id: number;
+  player_name: string;
+  firstName: string;
+  lastName: string;
+  shooting_accuracy: number;
+  passing_accuracy: number;
+  dribbling_accuracy: number;
+  tackling_accuracy: number;
+  scoring_ratio: number;
+  discipline: number;
+
   constructor(
     private route: ActivatedRoute,
     private playerService: PlayerService,
@@ -27,7 +38,23 @@ export class PlayerDetailComponent implements OnInit {
 
   getPlayer(): void {
     const nb = +this.route.snapshot.paramMap.get('id');
-    this.playerService.getPlayer(nb).subscribe(player => this.player = player);
+    this.playerService.getPlayersJSON().subscribe(playerData => {
+      for(let data of playerData) {
+        if(data.id === nb) {
+          console.log(data);
+          this.player = data;
+          this.player.id = data.id;
+          this.player.firstName = data.firstName;
+          this.player.lastName = data.lastName;
+          this.shooting_accuracy = data.shooting_accuracy;
+          this.passing_accuracy = data.passing_accuracy;
+          this.dribbling_accuracy = data.dribbling_accuracy;
+          this.tackling_accuracy = data.tackling_accuracy;
+          this.scoring_ratio = data.scoring_ratio;
+          this.discipline = data.discipline;
+        }
+      }
+    });
   }
 
   goBack(): void{

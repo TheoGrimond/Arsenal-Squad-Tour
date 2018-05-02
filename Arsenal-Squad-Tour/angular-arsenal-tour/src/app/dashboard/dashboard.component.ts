@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getPlayers(): void {
-    this.playerService.getPlayers()
+    this.playerService.getPlayersJSON()
       .subscribe(players => this.players = players.slice(1, 5));
   }
 }
