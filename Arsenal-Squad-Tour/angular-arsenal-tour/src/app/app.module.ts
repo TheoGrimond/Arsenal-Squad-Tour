@@ -8,6 +8,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CdkTableModule} from '@angular/cdk/table';
 import { MatTableModule } from '@angular/material';
 import { MatSortModule } from '@angular/material/sort';
+import { MatListModule, MatGridListModule } from '@angular/material';
 
 // Charts Module Import
 import { ChartsModule } from 'ng2-charts';
@@ -24,6 +25,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { PlayerSearchComponent } from './player-search/player-search.component';
 import { PlayersTableComponent } from './players-table/players-table.component';
 import { PlayerRadarComponent } from './player-radar/player-radar.component';
+import { PlayerStatsListComponent } from './player-stats-list/player-stats-list.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { PlayerRadarComponent } from './player-radar/player-radar.component';
     DashboardComponent,
     PlayerSearchComponent,
     PlayersTableComponent,
-    PlayerRadarComponent
+    PlayerRadarComponent,
+    PlayerStatsListComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,9 @@ import { PlayerRadarComponent } from './player-radar/player-radar.component';
     MatTableModule,
     CdkTableModule,
     MatSortModule,
-    ChartsModule
+    ChartsModule,
+    MatListModule,
+    MatGridListModule
   ],
   providers: [PlayerService, MessageService, InMemoryDataService],
   bootstrap: [AppComponent]

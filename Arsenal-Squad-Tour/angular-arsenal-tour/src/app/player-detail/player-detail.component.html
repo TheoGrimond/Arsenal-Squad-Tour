@@ -1,17 +1,19 @@
 <div *ngIf="player">
   <h2>{{ player.firstName +" "+ player.lastName | uppercase }} Details</h2>
 <div><span>Shirt Number: </span>{{player.id}}</div>
+
 <div>
-  <label>First Name:
-    <input [(ngModel)]="player.firstName" placeholder="firstName">
-  </label>
+  <h2>Attacking Statistics:</h2>
+  <app-player-stats-list></app-player-stats-list>
 </div>
+
 <div>
-  <label>Last Name:
-    <input [(ngModel)]="player.lastName" placeholder="lastName">
-  </label>
+    <h2>Defending Statistics:</h2>
 </div>
+
+<div>
+    <h2>Ratios:</h2>
 </div>
-<button (click)="goBack()">Go Back</button>
 
 <app-player-radar></app-player-radar>
+<button (click)="goBack()">Go Back</button>
