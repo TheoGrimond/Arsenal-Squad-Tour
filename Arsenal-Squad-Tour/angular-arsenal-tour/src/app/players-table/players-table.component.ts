@@ -9,7 +9,7 @@ import { PlayerService } from '../player.service';
 })
 export class PlayersTableComponent implements OnInit {
   players: Player[];
-  displayedColumns = ['id', 'firstName', 'lastName'];
+  displayedColumns = ['id', 'firstName', 'lastName', 'appearances', 'goals', 'assists'];
 
   constructor(private playerService: PlayerService) { }
 

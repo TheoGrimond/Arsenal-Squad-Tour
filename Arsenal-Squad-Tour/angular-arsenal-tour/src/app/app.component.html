@@ -1,24 +1,31 @@
-<!-- <div class="grid-container">
-    <div class="item1"><h1>{{title}}</h1></div>
-    <div class="item2">
-      <nav>
-        <ul>
-          <li><a routerLink="/dashboard">Dashboard</a></li>
-          <li><a routerLink="/players">Players</a></li>
-        </ul>
-    </nav>
-  </div>
-    <div class="item3">Main</div>  
-    <div class="item4">Right</div>
-    <div class="item5">Footer</div>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" routerLink="/dashboard">My Favorite Players</a>
+  <a class="navbar-brand" routerLink="/players">Player List</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  </button>
+  <h1 class="title">Arsenal Starting XI - Premier League Season 2017/2018</h1>
+  <!-- <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <app-player-search></app-player-search>
   </div> -->
-
-
-<h1>{{title}}</h1>
-<nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/players">Players</a>
 </nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+
+<main role="main" class="container">
+
+  <div class="starter-template">
+    <router-outlet></router-outlet>
+  </div>
+
+</main><!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../assets/js/vendor/popper.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 

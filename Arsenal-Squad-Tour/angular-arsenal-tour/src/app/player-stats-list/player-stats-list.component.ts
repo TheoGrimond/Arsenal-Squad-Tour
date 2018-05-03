@@ -46,4 +46,5 @@ export class PlayerStatsListComponent implements OnInit {
         }
       }
     });
+  }
 }

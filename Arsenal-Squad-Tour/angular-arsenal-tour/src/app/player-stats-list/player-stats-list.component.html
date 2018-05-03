@@ -1,5 +1,21 @@
 <div *ngIf="player">
-    <mat-grid-list cols="3" rowHeight="8:2">
+  <h3>General Information</h3>
+  <mat-grid-list cols="4" rowHeight="10:4">
+      <mat-grid-tile>
+          <mat-list role="list">
+            <mat-list-item role="listitem">Shirt Number : {{player.id}}</mat-list-item>
+            <mat-list-item role="listitem">Date Of Birth : {{player.dateOfBirth}}</mat-list-item>
+          </mat-list>
+      </mat-grid-tile>
+      <mat-grid-tile>
+          <mat-list role="list">
+              <mat-list-item role="listitem">Positions : {{player.positions}}</mat-list-item>
+              <mat-list-item role="listitem">Nationality: {{player.nationality}}</mat-list-item>
+            </mat-list>
+      </mat-grid-tile>
+    </mat-grid-list>
+  <h3>Attacking Statistics</h3>
+    <mat-grid-list cols="4" rowHeight="3:2">
         <mat-grid-tile>
           <mat-list role="list">
             <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
@@ -21,5 +37,44 @@
                 <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
               </mat-list>
         </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-list role="list">
+                <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
+                <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
+                <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
+              </mat-list>
+        </mat-grid-tile>
       </mat-grid-list>
+
+      <h3>Defending Statistics</h3>
+      <mat-grid-list cols="4" rowHeight="3:2">
+          <mat-grid-tile>
+            <mat-list role="list">
+              <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
+              <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
+              <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
+            </mat-list>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <mat-list role="list">
+                  <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
+                  <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
+                  <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
+                </mat-list>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <mat-list role="list">
+                  <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
+                  <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
+                  <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
+                </mat-list>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <mat-list role="list">
+                  <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
+                  <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
+                  <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
+                </mat-list>
+          </mat-grid-tile>
+        </mat-grid-list>    
 </div>

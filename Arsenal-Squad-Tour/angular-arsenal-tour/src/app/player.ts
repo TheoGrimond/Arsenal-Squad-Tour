@@ -1,11 +1,30 @@
 export class Player {
+    id: number;
     firstName: string;
     lastName: string;
-    id: number;
-    shooting_accuracy: number;
+    dateOfBirth: string;
+    nationality: string;
+    positions: string;
+    imageURL: string;
+    appearances: number;
+    goals: number;
+    assists: number;
     scoring_ratio: number;
+    shotsTotal: number;
+    shotsOnTarget: number;
+    shooting_accuracy: number;
+    passesTotal: number;
+    passesSuccess: number;
     passing_accuracy: number;
-    tackling_accuracy: number;
+    dribblesTotal: number;
+    dribblesSuccess: number;
     dribbling_accuracy: number;
+    interceptions: number;
+    tacklesTotal: number;
+    tacklesSuccess: number;
+    tackling_accuracy: number;
+    foulsCommitted: number;
+    yellowCards: number;
+    redCards: number;
     discipline: number;
 }
