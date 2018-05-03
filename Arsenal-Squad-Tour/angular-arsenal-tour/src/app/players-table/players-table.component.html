@@ -1,22 +1,16 @@
 <div class="example-container mat-elevation-z8">
     <mat-table #table [dataSource]="players" class=players>
-       
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
   
-      <!-- Position Column -->
       <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
         <mat-cell *matCellDef="let player" class="badge" routerLink="/detail/{{player.id}}"> {{player.id}} </mat-cell>
       </ng-container>
   
-      <!-- Name Column -->
       <ng-container matColumnDef="firstName">
         <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
         <mat-cell *matCellDef="let player"> {{player.firstName}} </mat-cell>
       </ng-container>
   
-      <!-- Weight Column -->
       <ng-container matColumnDef="lastName">
         <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
         <mat-cell *matCellDef="let player"> {{player.lastName}} </mat-cell>
@@ -32,17 +26,17 @@
           <mat-cell *matCellDef="let player"> {{player.goals}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="assists">
-          <mat-header-cell *matHeaderCellDef> Assists </mat-header-cell>
-          <mat-cell *matCellDef="let player"> {{player.assists}} </mat-cell>
+      <ng-container matColumnDef="passesSuccess">
+          <mat-header-cell *matHeaderCellDef> Passes Completed </mat-header-cell>
+          <mat-cell *matCellDef="let player"> {{player.passesSuccess}} </mat-cell>
       </ng-container>  
+
+      <ng-container matColumnDef="tacklesSuccess">
+          <mat-header-cell *matHeaderCellDef> Tackles Completed </mat-header-cell>
+          <mat-cell *matCellDef="let player"> {{player.tacklesSuccess}} </mat-cell>
+      </ng-container>
   
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
   </div>
-  
-  
-  <!-- Copyright 2018 Google Inc. All Rights Reserved.
-      Use of this source code is governed by an MIT-style license that
-      can be found in the LICENSE file at http://angular.io/license -->

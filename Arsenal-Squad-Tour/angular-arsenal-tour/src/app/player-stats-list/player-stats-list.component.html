@@ -1,80 +1,86 @@
-<div *ngIf="player">
-  <h3>General Information</h3>
-  <mat-grid-list cols="4" rowHeight="10:4">
-      <mat-grid-tile>
-          <mat-list role="list">
-            <mat-list-item role="listitem">Shirt Number : {{player.id}}</mat-list-item>
-            <mat-list-item role="listitem">Date Of Birth : {{player.dateOfBirth}}</mat-list-item>
-          </mat-list>
-      </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-list role="list">
-              <mat-list-item role="listitem">Positions : {{player.positions}}</mat-list-item>
-              <mat-list-item role="listitem">Nationality: {{player.nationality}}</mat-list-item>
-            </mat-list>
-      </mat-grid-tile>
-    </mat-grid-list>
-  <h3>Attacking Statistics</h3>
-    <mat-grid-list cols="4" rowHeight="3:2">
-        <mat-grid-tile>
-          <mat-list role="list">
-            <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
-            <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
-            <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-list role="list">
-                <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
-                <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
-                <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
-              </mat-list>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-list role="list">
-                <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
-                <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
-                <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
-              </mat-list>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-list role="list">
-                <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
-                <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
-                <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
-              </mat-list>
-        </mat-grid-tile>
-      </mat-grid-list>
+<!-- Bootstrap containers including the Player stats -->
 
-      <h3>Defending Statistics</h3>
-      <mat-grid-list cols="4" rowHeight="3:2">
-          <mat-grid-tile>
-            <mat-list role="list">
-              <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
-              <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
-              <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
-            </mat-list>
-          </mat-grid-tile>
-          <mat-grid-tile>
-              <mat-list role="list">
-                  <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
-                  <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
-                  <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
-                </mat-list>
-          </mat-grid-tile>
-          <mat-grid-tile>
-              <mat-list role="list">
-                  <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
-                  <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
-                  <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
-                </mat-list>
-          </mat-grid-tile>
-          <mat-grid-tile>
-              <mat-list role="list">
-                  <mat-list-item role="listitem">Shooting Accuracy : {{player.shooting_accuracy}}</mat-list-item>
-                  <mat-list-item role="listitem">Passing Accuracy : {{player.passing_accuracy}}</mat-list-item>
-                  <mat-list-item role="listitem">Tackling Accuracy: {{player.tackling_accuracy}}</mat-list-item>
-                </mat-list>
-          </mat-grid-tile>
-        </mat-grid-list>    
+<div *ngIf="player">
+
+    <div class="container-fluid">
+    <h3>General Information</h3>
+        <div class="row">
+            <div class="col"><div class="card" style="width: 20rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Shirt Number: {{ player.id }}</li>
+                  <li class="list-group-item">Date of Birth: {{ player.dateOfBirth }}</li>
+                  <li class="list-group-item">Nationality: {{ player.nationality }}</li>
+                </ul>
+              </div></div>
+            <div class="col"><div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Appearances: {{ player.appearances }}</li>
+                  <li class="list-group-item">Goals: {{ player.goals }}</li>
+                  <li class="list-group-item">Assists: {{ player.assists }}</li>
+                </ul>
+              </div></div>
+            <div class="col"><div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Goal/Game Ratio: {{ player.scoring_ratio }}%</li>
+                </ul>
+              </div></div>  
+          </div>
+    </div>
+</div>
+
+<div *ngIf="player">
+    <div class="container-fluid">
+    <h3>Attacking Statistics</h3>
+    <div class="row">
+        <div class="col"><div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Shots: {{ player.shotsTotal }}</li>
+              <li class="list-group-item">Shots on Target: {{ player.shotsOnTarget }}</li>
+              <li class="list-group-item">Shooting Accuracy: {{ player.shooting_accuracy }}%</li>
+            </ul>
+          </div></div>
+        <div class="col"><div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Passes Attempted: {{ player.passesTotal }}</li>
+              <li class="list-group-item">Successful Passes: {{ player.passesSuccess }}</li>
+              <li class="list-group-item">Passing Accuracy: {{ player.passing_accuracy }}%</li>
+            </ul>
+          </div></div>
+        <div class="col"><div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Dribbles Attempted: {{ player.dribblesTotal }}</li>
+              <li class="list-group-item">Successful Dribbles: {{ player.dribblesSuccess }}</li>
+              <li class="list-group-item">Dribbling Accuracy: {{ player.dribbling_accuracy }}%</li>
+            </ul>
+          </div></div>  
+      </div>
+    </div>
+</div>
+
+<div *ngIf="player">
+    <div class="container-fluid">
+        <h3>Defensive Statistics</h3>
+            <div class="row">
+                <div class="col"><div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Tackles Attempted: {{ player.tacklesTotal }}</li>
+                      <li class="list-group-item">Successful Tackles: {{ player.tacklesSuccess }}</li>
+                      <li class="list-group-item">Tackling Accuracy: {{ player.tackling_accuracy }}%</li>
+                    </ul>
+                  </div></div>
+                <div class="col"><div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Interceptions: {{ player.interceptions }}</li>
+                        <li class="list-group-item">Yellow Cards: {{ player.yellowCards }}</li>
+                        <li class="list-group-item">Red Cards: {{ player.redCards }}</li>
+                    </ul>
+                  </div></div>
+                <div class="col"><div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Fouls Committed: {{ player.foulsCommitted }}</li>
+                        <li class="list-group-item">Discipline: {{ player.discipline }}%</li>
+                    </ul>
+                  </div></div>    
+              </div>
+        </div>
 </div>

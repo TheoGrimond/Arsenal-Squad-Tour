@@ -50,7 +50,7 @@ export class PlayerRadarComponent implements OnInit {
           this.discipline = data.discipline;
 
           this.radarChartData = [
-            {data: [this.shooting_accuracy, this.passing_accuracy, this.dribbling_accuracy, this.dribbling_accuracy, this.tackling_accuracy, this.scoring_ratio, this.discipline], label: this.player.lastName}
+            {data: [this.shooting_accuracy, this.scoring_ratio, this.passing_accuracy, this.dribbling_accuracy, this.tackling_accuracy, this.discipline], label: this.player.lastName}
           ];
         }
       }
@@ -58,8 +58,22 @@ export class PlayerRadarComponent implements OnInit {
   }
 
   // Radar
-  public radarChartLabels:string[] = ['Shooting', 'Passing', 'Dribbling', 'Tackling', 'Scoring', 'Discipline'];
+  public radarChartLabels:string[] = ['Shooting', 'Scoring', 'Passing', 'Dribbling', 'Tackling', 'Discipline'];
   public radarChartType:string = 'radar';
+
+  public chartOptions: any = {
+    scale: {
+      ticks: {
+        beginAtZero: true,
+        min: 0,
+        max: 100,
+        stepSize: 20
+      },
+      pointLabels: {
+        fontSize: 18
+      }
+    },
+  };
  
   // events
   public chartClicked(e:any):void {
